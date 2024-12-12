@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,7 +7,6 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto px-6">
         {/* Logo and Description */}
         <div className="text-center">
-          {/* <div className="text-4xl text-blue-500 font-bold mb-2">B</div> */}
           <h2 className="text-white text-xl font-semibold">Hotel Grand</h2>
           <p className="text-sm mt-2">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit exercitation veniam.
@@ -30,15 +30,31 @@ const Footer = () => {
         </div>
 
         {/* Links */}
-        <div className="flex justify-center gap-6 mt-8 text-sm">
-          <a href="#" className="hover:text-white">About</a>
-          <a href="#" className="hover:text-white">Jobs</a>
-          <a href="#" className="hover:text-white">Blog</a>
-          <a href="#" className="hover:text-white">Press</a>
-          <a href="#" className="hover:text-white">Careers</a>
-          <a href="#" className="hover:text-white">Terms of use</a>
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <a href="#" className="hover:text-white">Contact</a>
+        <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm">
+          <Link to="/about" className="hover:text-white">
+            About
+          </Link>
+          <Link to="/jobs" className="hover:text-white">
+            Jobs
+          </Link>
+          <Link to="/blog" className="hover:text-white">
+            Blog
+          </Link>
+          <Link to="/press" className="hover:text-white">
+            Press
+          </Link>
+          <Link to="/careers" className="hover:text-white">
+            Careers
+          </Link>
+          <Link to="/terms-of-use" className="hover:text-white">
+            Terms of use
+          </Link>
+          <Link to="/privacy-policy" className="hover:text-white">
+            Privacy Policy
+          </Link>
+          <Link to="/contact" className="hover:text-white">
+            Contact
+          </Link>
         </div>
 
         {/* Contact Info */}

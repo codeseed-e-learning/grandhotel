@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RoomCard = ({ imageSrc, date, category, comments, title }) => {
   return (
+   <Link to={'hotel'}>
     <div className="max-w-full sm:max-w-sm lg:max-w-md w-full bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
       {/* Image Section */}
       <div className="relative">
@@ -38,6 +40,7 @@ const RoomCard = ({ imageSrc, date, category, comments, title }) => {
         </button>
       </div>
     </div>
+   </Link>
   );
 };
 

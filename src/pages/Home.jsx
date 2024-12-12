@@ -45,7 +45,7 @@ const Home = () => {
             title="Luxury Accommodations for Unforgettable Moments"
             className="shadow-lg hover:shadow-xl transition-shadow duration-300"
           />
-          <div className="hidden lg:block bg-orange-50 rounded-lg p-6 flex items-center justify-center">
+          <div className="lg:block bg-orange-50 rounded-lg p-6 flex items-center justify-center">
             <div className="text-center">
               <h4 className="text-2xl font-bold text-orange-600 mb-4">
                 More Rooms Available

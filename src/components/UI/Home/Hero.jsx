@@ -6,22 +6,28 @@ const Hero = () => {
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(1);
 
+  const handleInquiry = () => {
+    const message = `Hello, I would like to inquire about availability. Check-In: ${checkIn}, Check-Out: ${checkOut}, Number of Guests: ${guests}.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=918830231066&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div
-      className="bg-cover bg-center h-screen flex items-center justify-center"
+      className="relative bg-cover bg-center h-screen flex items-center justify-center"
       style={{
         backgroundImage: "url('/images/rooms/room-main.jpg')",
       }}
     >
       {/* Overlay */}
-      <div className="mt-10 inset-0 bg-black bg-opacity-40 "></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-white text-center mt-32 px-4 md:px-10">
-        <h1 className="text-4xl md:text-4xl font-bold mb-6">
+      <div className="relative z-10 text-white text-center px-4 md:px-10">
+        <h1 className="text-3xl md:text-5xl font-bold mb-6">
           Enjoy Holidays, Vacations & Family Time with Us
         </h1>
-        <p className="text-lg md:text-xl mb-8">
+        <p className="text-base md:text-lg mb-8">
           Discover luxurious stays and unforgettable experiences tailored just for you.
         </p>
 
@@ -30,7 +36,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Check-in Date */}
             <div className="relative">
-              <label className="block text-sm font-semibold mb-2 text-gray-700" htmlFor="checkin">
+              <label htmlFor="checkin" className="block text-sm font-semibold mb-2 text-gray-700">
                 Check-In
               </label>
               <div className="relative">
@@ -47,7 +53,7 @@ const Hero = () => {
 
             {/* Check-out Date */}
             <div className="relative">
-              <label className="block text-sm font-semibold mb-2 text-gray-700" htmlFor="checkout">
+              <label htmlFor="checkout" className="block text-sm font-semibold mb-2 text-gray-700">
                 Check-Out
               </label>
               <div className="relative">
@@ -64,7 +70,7 @@ const Hero = () => {
 
             {/* Guests */}
             <div>
-              <label className="block text-sm font-semibold mb-2 text-gray-700" htmlFor="guests">
+              <label htmlFor="guests" className="block text-sm font-semibold mb-2 text-gray-700">
                 Guests
               </label>
               <select
@@ -82,12 +88,14 @@ const Hero = () => {
             </div>
           </div>
           <div className="mt-6">
-            <button className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition duration-300 ease-in-out transform hover:scale-105">
-              Search Available Rooms
+            <button 
+              className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition duration-300 ease-in-out transform hover:scale-105"
+              onClick={handleInquiry}
+            >
+              Send Inquiry on WhatsApp
             </button>
           </div>
         </div>
-        <p className="mt-5 mx-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt non laudantium quae quasi adipisci sequi perferendis! Tempore nemo inventore deserunt sequi aliquid?</p>
       </div>
     </div>
   );
