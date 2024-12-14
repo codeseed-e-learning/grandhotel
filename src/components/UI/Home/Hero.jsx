@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { FaCalendarAlt } from "react-icons/fa";
 
 const Hero = () => {
-  const [checkIn, setCheckIn] = useState("");
-  const [checkOut, setCheckOut] = useState("");
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
   const [guests, setGuests] = useState(1);
 
   const handleInquiry = () => {
-    const message = `Hello, I would like to inquire about availability. Check-In: ${checkIn}, Check-Out: ${checkOut}, Number of Guests: ${guests}.`;
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=918830231066&text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const message = `Hello, I would like to inquire about availability. Check-In: ${
+      checkIn ? checkIn.toLocaleDateString() : "Not selected"
+    }, Check-Out: ${
+      checkOut ? checkOut.toLocaleDateString() : "Not selected"
+    }, Number of Guests: ${guests}.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=918830231066&text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -28,7 +36,8 @@ const Hero = () => {
           Enjoy Holidays, Vacations & Family Time with Us
         </h1>
         <p className="text-base md:text-lg mb-8">
-          Discover luxurious stays and unforgettable experiences tailored just for you.
+          Discover luxurious stays and unforgettable experiences tailored just
+          for you.
         </p>
 
         {/* Search Form */}
@@ -36,16 +45,21 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Check-in Date */}
             <div className="relative">
-              <label htmlFor="checkin" className="block text-sm font-semibold mb-2 text-gray-700">
+              <label
+                htmlFor="checkin"
+                className="block text-sm font-semibold mb-2 text-gray-700"
+              >
                 Check-In
               </label>
               <div className="relative">
-                <FaCalendarAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <input
-                  id="checkin"
-                  type="date"
-                  value={checkIn}
-                  onChange={(e) => setCheckIn(e.target.value)}
+                <FaCalendarAlt
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
+                  style={{ zIndex: 2 }}
+                />
+                <DatePicker
+                  selected={checkIn}
+                  onChange={(date) => setCheckIn(date)}
+                  placeholderText="Select date"
                   className="w-full pl-10 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:outline-none"
                 />
               </div>
@@ -53,16 +67,21 @@ const Hero = () => {
 
             {/* Check-out Date */}
             <div className="relative">
-              <label htmlFor="checkout" className="block text-sm font-semibold mb-2 text-gray-700">
+              <label
+                htmlFor="checkout"
+                className="block text-sm font-semibold mb-2 text-gray-700"
+              >
                 Check-Out
               </label>
               <div className="relative">
-                <FaCalendarAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <input
-                  id="checkout"
-                  type="date"
-                  value={checkOut}
-                  onChange={(e) => setCheckOut(e.target.value)}
+                <FaCalendarAlt
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
+                  style={{ zIndex: 2 }}
+                />
+                <DatePicker
+                  selected={checkOut}
+                  onChange={(date) => setCheckOut(date)}
+                  placeholderText="Select date"
                   className="w-full pl-10 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:outline-none"
                 />
               </div>
@@ -70,7 +89,10 @@ const Hero = () => {
 
             {/* Guests */}
             <div>
-              <label htmlFor="guests" className="block text-sm font-semibold mb-2 text-gray-700">
+              <label
+                htmlFor="guests"
+                className="block text-sm font-semibold mb-2 text-gray-700"
+              >
                 Guests
               </label>
               <select
@@ -81,14 +103,14 @@ const Hero = () => {
               >
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <option key={num} value={num}>
-                    {num} Guest{num > 1 ? 's' : ''}
+                    {num} Guest{num > 1 ? "s" : ""}
                   </option>
                 ))}
               </select>
             </div>
           </div>
           <div className="mt-6">
-            <button 
+            <button
               className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition duration-300 ease-in-out transform hover:scale-105"
               onClick={handleInquiry}
             >

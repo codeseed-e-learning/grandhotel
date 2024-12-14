@@ -58,20 +58,31 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-10 text-sm">
-          <div className="flex items-center gap-2">
-            <i className="fas fa-phone-alt"></i>
-            <span>310-437-2766</span>
-          </div>
-          <div className="flex items-center gap-2 mt-4 md:mt-0">
-            <i className="fas fa-envelope"></i>
-            <span>unreal@example.com</span>
-          </div>
-          <div className="text-center mt-4 md:mt-0">
-            <span>&copy; 2024, All Rights Reserved by Hotel Grand</span>
-          </div>
-        </div>
+       
+
       </div>
+      <div className="text-center text-gray-600 mt-6 text-sm">
+        Made with <span className="text-red-500">❤️</span> by
+        <a
+          href="https://www.instagram.com/swe.amit"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium hover:underline ml-1"
+        >
+          Amit Kasabe
+        </a>
+        &nbsp;
+        from
+        <a
+          href="https://codeseed.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium hover:underline ml-1"
+        >
+          CODESEED
+        </a>.
+      </div>
+
     </footer>
   );
 };

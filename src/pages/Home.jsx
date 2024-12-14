@@ -6,28 +6,39 @@ import Testimonials from '../components/UI/Home/Testimonials'
 import Footer from '../components/UI/Home/Footer'
 import Gallery from '../components/UI/Home/Gallery'
 import RoomCard from '../components/RoomCard'
+import VideoComponent from '../components/UI/Home/VideoComponent'
+import Review from '../components/UI/Home/Review'
+import Heading from '../components/single/Heading'
 
 const Home = () => {
   return (
     <div className="bg-gray-50">
       <Navbar />
       <Hero />
+      <Heading
+        title={"Look at our Hotel , how it looks?"}
+        subtitle={"A Glimpse Into Their Unforgettable Stays"}
+        paragraph={
+          "Curious about what makes our hotel a unique destination? Watch the experiences of our guests who’ve enjoyed the finest accommodations, " +
+          "exceptional service, and stunning amenities. From relaxing moments in the spa to vibrant dinners at our restaurant, hear firsthand how our hotel transforms stays into lasting memories. " +
+          "Ready to immerse yourself in comfort and luxury? Watch, experience, and book your stay with us today!"
+        }
+      />
+
+      <VideoComponent />
       <WhyUs />
-      <Testimonials />
-      
+      {/* <Testimonials /> */}
+      <Heading
+        title={"What Our Customers Say"}
+        subtitle={"Take a Look at Their Experiences"}
+        paragraph={"Discover why our guests rave about their stays with us! From exceptional service to unforgettable moments, hear firsthand accounts of how we've made every stay a memorable experience. Ready to experience the same unparalleled comfort and luxury? Join us and create your own unforgettable memories!"}
+      />
+
+      <Review />
+
       <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-orange-600 font-semibold uppercase tracking-wide text-sm mb-3">
-            Explore Our Rooms
-          </h2>
-          <h3 className="text-4xl font-bold text-gray-800 mb-4">
-            Ready to Find Your Perfect Stay?
-          </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Browse through our carefully curated selection of rooms designed to make your stay memorable and comfortable.
-          </p>
-        </div>
-        
+
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <RoomCard
             imageSrc="/images/rooms/room-1.jpg"
@@ -60,7 +71,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <Gallery />
       <Footer />
     </div>
