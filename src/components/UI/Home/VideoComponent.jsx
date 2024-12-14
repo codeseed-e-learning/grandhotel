@@ -16,7 +16,7 @@ const VideoComponent = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-white rounded-xl border">
             {/* Video Section */}
-            <div className="w-full">
+            <div className="w-full mb-6 md:mb-0">
                 <video className="w-full rounded-lg border" poster="/images/hotel/2.JPG" controls>
                     <source src="/videos/vdo.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -25,10 +25,10 @@ const VideoComponent = () => {
 
             {/* Amenities Section */}
             <div className="flex flex-col justify-center bg-gradient-to-br from-white to-gray-100 p-6 rounded-xl border">
-                <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400 mb-6 text-center">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400 mb-6 text-center">
                     Luxurious Amenities
                 </h2>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                     {amenities.map((amenity, index) => (
                         <div
                             key={index}
@@ -37,7 +37,9 @@ const VideoComponent = () => {
                             <div className="w-8 h-8 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold text-xl">
                                 {amenity.icon}
                             </div>
-                            <span className="text-gray-800 font-medium">{amenity.name}</span>
+                            <span className="text-gray-800 font-medium text-xs sm:text-base ">
+                                {amenity.name}
+                            </span>
                         </div>
                     ))}
                 </div>
