@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Get the current route
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const isActive = (path) => location.pathname === path; // Check if the tab is active
+
   return (
     <nav className="bg-white border-b relative w-full z-40">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <Link to="/">
+      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+        <Link to="/" className="flex items-center">
           {/* Logo Section */}
           <div
             className="text-2xl font-bold text-orange-400"
@@ -23,19 +26,35 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-gray-800 hover:text-blue-500">
+          <Link
+            to="/"
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             Home
           </Link>
-          <Link to="/about" className="text-gray-800 hover:text-blue-500">
+          <Link
+            to="/about"
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             About
           </Link>
-          <Link to="/services" className="text-gray-800 hover:text-blue-500">
+          <Link
+            to="/services"
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/services") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             Services
           </Link>
-          <Link to="/contact" className="text-gray-800 hover:text-blue-500">
+          <Link
+            to="/contact"
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/contact") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             Contact
           </Link>
-          <button className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700">
+          <button className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-transform duration-300 focus:outline-none">
             Explore Now
           </button>
         </div>
@@ -44,6 +63,7 @@ const Navbar = () => {
         <button
           onClick={toggleMenu}
           className="md:hidden text-gray-800 focus:outline-none"
+          aria-label="Toggle Menu"
         >
           {isOpen ? (
             <svg
@@ -81,13 +101,14 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed inset-0 bg-white transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-0 bg-white transform transition-transform duration-500 ${isOpen ? "translate-x-0" : "-translate-x-full"
           } z-30 md:hidden`}
       >
         {/* Close Button */}
         <button
           onClick={toggleMenu}
           className="absolute top-4 right-4 text-gray-800 focus:outline-none"
+          aria-label="Close Menu"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -105,17 +126,33 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <div className="p-4 space-y-4">
-          <Link to="/" className="block text-gray-800 hover:text-blue-500">
+        <div className="p-8 space-y-6">
+          <Link
+            to="/"
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             Home
           </Link>
-          <Link to="/about" className="block text-gray-800 hover:text-blue-500">
+          <Link
+            to="/about"
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             About
           </Link>
-          <Link to="/services" className="block text-gray-800 hover:text-blue-500">
+          <Link
+            to="/services"
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/services") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             Services
           </Link>
-          <Link to="/contact" className="block text-gray-800 hover:text-blue-500">
+          <Link
+            to="/contact"
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/contact") ? "border-b-2 border-orange-400" : ""
+              }`}
+          >
             Contact
           </Link>
         </div>
@@ -125,7 +162,8 @@ const Navbar = () => {
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black bg-opacity-40 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-40 md:hidden z-20"
+          aria-hidden="true"
         ></div>
       )}
     </nav>

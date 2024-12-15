@@ -48,30 +48,30 @@ const services = [
 const Services = () => {
   return (
     <>
-    <Navbar/>
-    <div className="bg-orange-500 py-10">
-      <div className="container mx-auto px-6">
-        <h2 className="text-white text-3xl font-bold text-center mb-8">
-          Our Services
-        </h2>
-        {/* Grid Layout for Services */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg text-center"
-            >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
-          ))}
+      <Navbar />
+      <div className="bg-orange-500 py-10">
+        <div className="container mx-auto px-6">
+          <h2 className="text-white text-3xl font-bold text-center mb-8">
+            Our Services
+          </h2>
+          {/* Grid Layout for Services */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 };

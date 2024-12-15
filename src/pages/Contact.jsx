@@ -3,17 +3,38 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/UI/Navbar";
 import Footer from "../components/UI/Home/Footer";
 import { FaHeadphones } from "react-icons/fa";
+import axios from "axios";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const handlePostRequest = async () => {
+    try {
+      const resp = await axios.post(`http://localhost:1337/api/inquiries`, {
+        data: {
+          message,
+          full_name: name,
+          phone_number: "8830231066", // Replace with dynamic data if required
+        },
+      });
+      console.log("Response:", resp.data);
+    } catch (error) {
+      console.error("Error in POST request:", error.message);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
     const phoneNumber = "+918830231066";
+
+    // Open WhatsApp with the message
     window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank");
+
+    // Trigger POST request to server
+    handlePostRequest();
   };
 
   return (
@@ -79,10 +100,10 @@ const Contact = () => {
             <div className="bg-white p-8 border rounded-lg mb-8">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Details</h3>
               <p className="text-gray-700 mb-2">
-              <FaHeadphones /> Phone: <a href="tel:+918830231066" className="text-blue-500 hover:underline">+91 8830231066</a>
+                <FaHeadphones /> Phone: <a href="tel:+918830231066" className="text-blue-500 hover:underline">+91 8830231066</a>
               </p>
               <p className="text-gray-700 mb-2">
-                Working Hours: <a href="tel:+918830231066" className="text-blue-500 hover:underline">24 Hours</a>
+                Working Hours: 24 Hours
               </p>
               <p className="text-gray-700">
                 Email: <a href="mailto:amit@codeseed.in" className="text-blue-500 hover:underline">amit@codeseed.in</a>
@@ -106,40 +127,8 @@ const Contact = () => {
 
         {/* Social Links */}
         <div className="mt-12 text-center">
-          {/* <h3 className="text-xl font-semibold text-gray-800 mb-4">Connect with us</h3> */}
           <div className="flex justify-center space-x-6">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition duration-300"
-            >
-              <i className="fab fa-facebook-f text-2xl"></i>
-            </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-600 transition duration-300"
-            >
-              <i className="fab fa-twitter text-2xl"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700 hover:text-blue-900 transition duration-300"
-            >
-              <i className="fab fa-linkedin-in text-2xl"></i>
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 hover:text-pink-700 transition duration-300"
-            >
-              <i className="fab fa-instagram text-2xl"></i>
-            </a>
+            {/* Example: Add meaningful icons with accessible labels */}
           </div>
         </div>
       </div>
