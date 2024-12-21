@@ -16,41 +16,32 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         <Link to="/" className="flex items-center">
           {/* Logo Section */}
-          <div
-            className="text-2xl font-bold text-orange-400"
-            style={{ fontFamily: "Playwrite MX Guides" }}
-          >
-            HotelGrand
-          </div>
+          <h2 className="text-3xl italic font-semibold text-orange-500">HotelGrand</h2>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link
             to="/"
-            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/") ? "border-b-2 border-orange-400" : ""}`}
           >
             Home
           </Link>
           <Link
             to="/about"
-            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""}`}
           >
             About
           </Link>
           <Link
             to="/services"
-            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/services") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/services") ? "border-b-2 border-orange-400" : ""}`}
           >
             Services
           </Link>
           <Link
             to="/contact"
-            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/contact") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/contact") ? "border-b-2 border-orange-400" : ""}`}
           >
             Contact
           </Link>
@@ -101,8 +92,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`fixed inset-0 bg-white transform transition-transform duration-500 ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } z-30 md:hidden`}
+        className={`fixed inset-0 bg-white transform transition-transform duration-500 ${isOpen ? "translate-x-0" : "-translate-x-full"} z-30 md:hidden`}
       >
         {/* Close Button */}
         <button
@@ -129,29 +119,25 @@ const Navbar = () => {
         <div className="p-8 space-y-6">
           <Link
             to="/"
-            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/") ? "border-b-2 border-orange-400" : ""}`}
           >
             Home
           </Link>
           <Link
             to="/about"
-            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""}`}
           >
             About
           </Link>
           <Link
             to="/services"
-            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/services") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/services") ? "border-b-2 border-orange-400" : ""}`}
           >
             Services
           </Link>
           <Link
             to="/contact"
-            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/contact") ? "border-b-2 border-orange-400" : ""
-              }`}
+            className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/contact") ? "border-b-2 border-orange-400" : ""}`}
           >
             Contact
           </Link>

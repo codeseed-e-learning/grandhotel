@@ -76,11 +76,13 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <RoomCard
               imageSrc="/images/rooms/room-1.jpg"
-              date="Basic Room"
+              date="Execative"
               category="Hotel"
               comments={22}
               title="Comfortable Spaces for Every Traveler"
               className="shadow-lg hover:shadow-xl transition-shadow duration-300"
+              price={2500}
+              to={'/hotel'}
             />
             <RoomCard
               imageSrc="/images/rooms/room-main.jpg"
@@ -89,6 +91,8 @@ const Home = () => {
               comments={15}
               title="Luxury Accommodations for Unforgettable Moments"
               className="shadow-lg hover:shadow-xl transition-shadow duration-300"
+              price={3500}
+              to={"/suit"}
             />
             
           </div>
