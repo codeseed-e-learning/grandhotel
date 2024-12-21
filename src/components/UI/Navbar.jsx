@@ -28,7 +28,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/about"
+            to="/about-us"
             className={`text-gray-800 hover:text-blue-500 focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""}`}
           >
             About
@@ -124,7 +124,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/about"
+            to="/about-us"
             className={`block text-gray-800 hover:text-blue-500 text-lg focus:outline-none ${isActive("/about") ? "border-b-2 border-orange-400" : ""}`}
           >
             About
