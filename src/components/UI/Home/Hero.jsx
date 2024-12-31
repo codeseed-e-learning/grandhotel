@@ -14,7 +14,7 @@ const Hero = () => {
     }, Check-Out: ${
       checkOut ? checkOut.toLocaleDateString() : "Not selected"
     }, Number of Guests: ${guests}.`;
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=918830231066&text=${encodeURIComponent(
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919923233345&text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");

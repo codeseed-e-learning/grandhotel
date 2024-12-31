@@ -2,48 +2,42 @@ import React from 'react';
 
 const testimonials = [
   {
-    name: "Amit Sharma",
-    role: "CEO of Bright Minds",
-    feedback: "The Grand Hotel offers an exceptional experience! From check-in to check-out, everything was flawless.",
+    name: "अमित देशमुख",
+    role: "ब्राइट माइंड्सचे CEO",
+    feedback: "द ग्रँड हॉटेलमधील अनुभव अप्रतिम होता! चेक-इन पासून चेक-आउटपर्यंत सगळंच परिपूर्ण होतं.",
     rating: 5,
     image: "https://shenvi.in/wp-content/uploads/2022/10/profile-1.jpg"
   },
   {
-    name: "Priya Kapoor",
-    role: "Founder of Elite Travels",
-    feedback: "Staying at The Grand Hotel was a delight. Their hospitality and amenities exceeded all expectations.",
+    name: "प्रिया काळे",
+    role: "एलिट ट्रॅव्हल्सची संस्थापक",
+    feedback: "द ग्रँड हॉटेलमध्ये राहणे खूप आनंददायक होतं. त्यांची आदरातिथ्य आणि सोयीसुविधा माझ्या अपेक्षेपेक्षा अधिक होत्या.",
     rating: 5,
     image: "https://shenvi.in/wp-content/uploads/2022/10/profile-1.jpg"
   },
   {
-    name: "Rohit Verma",
-    role: "Manager at TechNext",
-    feedback: "The Grand Hotel truly understands customer service. Every detail was taken care of with perfection.",
+    name: "रोहित वर्मा",
+    role: "टेकनेक्स्टमध्ये व्यवस्थापक",
+    feedback: "द ग्रँड हॉटेलने खऱ्या अर्थाने ग्राहक सेवा दाखवली. प्रत्येक गोष्ट परिपूर्णतेने हाताळण्यात आली.",
     rating: 5,
     image: "https://shenvi.in/wp-content/uploads/2022/10/profile-1.jpg"
   },
   {
-    name: "Sneha Joshi",
-    role: "Designer at Creative Studio",
-    feedback: "An outstanding experience at The Grand Hotel! The ambiance and service were top-notch.",
+    name: "स्नेहा जोशी",
+    role: "क्रिएटिव्ह स्टुडिओमध्ये डिझायनर",
+    feedback: "द ग्रँड हॉटेलमध्ये उत्कृष्ट अनुभव मिळाला! वातावरण आणि सेवा अप्रतिम होती.",
     rating: 5,
     image: "https://shenvi.in/wp-content/uploads/2022/10/profile-1.jpg"
   },
   {
-    name: "Vikram Singh",
-    role: "Entrepreneur",
-    feedback: "The Grand Hotel redefines luxury. Their attention to detail and excellent service won me over.",
-    rating: 5,
-    image: "https://shenvi.in/wp-content/uploads/2022/10/profile-1.jpg"
-  },
-  {
-    name: "Vikram Singh",
-    role: "Entrepreneur",
-    feedback: "The Grand Hotel redefines luxury. Their attention to detail and excellent service won me over.",
+    name: "विक्रम पाटील",
+    role: "उद्योजक",
+    feedback: "द ग्रँड हॉटेलने लक्झरीची नवी व्याख्या तयार केली आहे. त्यांची सविस्तर लक्ष देण्याची पद्धत आणि उत्कृष्ट सेवा माझं मन जिंकलं.",
     rating: 5,
     image: "https://shenvi.in/wp-content/uploads/2022/10/profile-1.jpg"
   }
 ];
+
 
 const Review = () => {
   return (

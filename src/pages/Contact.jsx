@@ -16,7 +16,7 @@ const Contact = () => {
         data: {
           message,
           full_name: name,
-          phone_number: "8830231066", // Replace with dynamic data if required
+          phone_number: "9923233345", // Replace with dynamic data if required
         },
       });
       console.log("Response:", resp.data);
@@ -28,7 +28,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-    const phoneNumber = "+918830231066";
+    const phoneNumber = "+919923233345";
 
     // Open WhatsApp with the message
     window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank");
@@ -100,7 +100,7 @@ const Contact = () => {
             <div className="bg-white p-8 border rounded-lg mb-8">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Details</h3>
               <p className="text-gray-700 mb-2">
-                <FaHeadphones /> Phone: <a href="tel:+918830231066" className="text-blue-500 hover:underline">+91 8830231066</a>
+                Phone: <a href="tel:+919923233345" className="text-blue-500 hover:underline">+91 9923233345</a>
               </p>
               <p className="text-gray-700 mb-2">
                 Working Hours: 24 Hours
@@ -113,9 +113,10 @@ const Contact = () => {
             {/* Map */}
             <div className="bg-white p-8 border rounded-lg">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Our Location</h3>
+              {/* <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3797.9422918231767!2d75.29659727517543!3d17.841339983125312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDUwJzI4LjgiTiA3NcKwMTcnNTcuMCJF!5e0!3m2!1sen!2sin!4v1735278173914!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
               <div className="relative w-full h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60822.76583678027!2d75.27740359850624!3d17.677473114355138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc4181b8db52943%3A0x1ab147f5432da578!2sPandharpur%2C%20Maharashtra%20413304!5e0!3m2!1sen!2sin!4v1734008885131!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3797.9422918231767!2d75.29659727517543!3d17.841339983125312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDUwJzI4LjgiTiA3NcKwMTcnNTcuMCJF!5e0!3m2!1sen!2sin!4v1735278173914!5m2!1sen!2sin"
                   className="absolute inset-0 w-full h-full border-none"
                   allowFullScreen=""
                   loading="lazy"
@@ -124,7 +125,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
+    
         {/* Social Links */}
         <div className="mt-12 text-center">
           <div className="flex justify-center space-x-6">
